@@ -1,5 +1,8 @@
 import React from 'react'
 import Index from '../component/Index'
+import {Routes,Route} from 'react-router-dom'
+import Register from './Register'
+import Login from './Login'
 
 function Home() {
 
@@ -12,7 +15,11 @@ function Home() {
   return (
     <div>
       {/* <Index name={user.name} age={user.age}/> */}
-      <Index {...user}/>
+      <Routes>
+      <Route path='/Home' element={<Index {...user}/>}></Route>
+      <Route path='/Register' element={<Register/>}></Route>
+      <Route path='/Login' element={<Login/>}></Route>
+      </Routes>
     </div>
   )
 }
